@@ -15,12 +15,13 @@
   "dependencies": {
     "draft-js": "^0.10.0",
     "koa": "^2.2.0",
-    "nodemon": "^1.11.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1"
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "nodemon": "^1.11.0"
   }
 }
