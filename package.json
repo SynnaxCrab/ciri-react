@@ -3,19 +3,24 @@
   "version": "0.0.1",
   "description": "Ciri React",
   "main": "index.js",
+  "engines": {
+    "node": "7.10.0"
+  },
   "scripts": {
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.0.0",
-    "react": "^15.4.1"
+    "draft-js": "^0.10.0",
+    "koa": "^2.2.0",
+    "nodemon": "^1.11.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-plugin-syntax-async-functions": "^6.13.0",
-    "babel-plugin-transform-async-to-generator": "^6.16.0",
-    "babel-preset-es2015-node6": "^0.4.0"
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1"
   }
 }
