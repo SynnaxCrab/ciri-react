@@ -1,5 +1,5 @@
-const { resolve } = require('path');
-const webpack = require('webpack');
+const { resolve } = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -16,7 +16,7 @@ module.exports = {
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
 
-    './index.js'
+    './index.js',
     // the entry point of our app
   ],
 
@@ -26,7 +26,7 @@ module.exports = {
 
     path: resolve(__dirname, 'dist'),
 
-    publicPath: '/'
+    publicPath: '/',
     // necessary for HMR to know where to load the hot update chunks
   },
 
@@ -34,13 +34,14 @@ module.exports = {
 
   devServer: {
     host: '0.0.0.0',
+    port: 8081,
     hot: true,
     // enable HMR on the server
 
     contentBase: resolve(__dirname, 'dist'),
     // match the output path
 
-    publicPath: '/'
+    publicPath: '/',
     // match the output `publicPath
   },
 
@@ -48,21 +49,21 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: [ 'babel-loader' ],
-        exclude: /node_modules/
+        use: ['babel-loader'],
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader?modules' ]
-      }
-    ]
+        use: ['style-loader', 'css-loader?modules'],
+      },
+    ],
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
-    //
-    new webpack.NamedModulesPlugin()
+
+    new webpack.NamedModulesPlugin(),
     // prints more readable module names in the browser console on HMR updates
-  ]
+  ],
 }
