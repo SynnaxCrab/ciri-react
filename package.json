@@ -13,10 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-client": "^1.2.2",
     "draft-js": "^0.10.0",
     "koa": "^2.2.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-apollo": "^1.2.0",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
