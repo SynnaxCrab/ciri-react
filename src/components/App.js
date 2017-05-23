@@ -4,22 +4,25 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 
 import ArticlesListPage from './ArticlesListPage'
+import NewArticlePage from './NewArticlePage'
 
 import styles from './App.css'
 
 const client = new ApolloClient({
-  // networkInterface: createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/cj1xk89v8py9q0137afwotu0p' }),
   networkInterface: createNetworkInterface({ uri: 'http://127.0.0.1:3000/graphql' }),
+  dataIdFromObject: o => o.id,
 })
 
 const App = () => (
-  <Router>
-    <div className={styles.app}>
-      <ApolloProvider client={client}>
+  <ApolloProvider client={client}>
+    <Router>
+      <div className={styles.app}>
         <Route exact path='/' component={ArticlesListPage} />
-      </ApolloProvider>
-    </div>
-  </Router>
+        <Route path='/articles/new' component={NewArticlePage} />
+      </div>
+    </Router>
+  </ApolloProvider>
+
 )
 
 export default App

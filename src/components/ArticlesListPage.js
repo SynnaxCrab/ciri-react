@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -14,6 +15,7 @@ const ArticlesListPage = ({ data }) => {
 
   return (
     <div>
+      <Link to='/articles/new'>New Article</Link>
       <div>
         there are {data.articles.length} articles.
       </div>
@@ -31,7 +33,7 @@ ArticlesListPage.propTypes = {
 
 const ArticlesQuery = gql`query ArticlesQuery {
   articles {
-    title
+    id
   }
 }`
 
