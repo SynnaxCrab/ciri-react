@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
+import ArticlePreview from './ArticleListPage/ArticlePreview'
+
 const ArticlesListPage = ({ data }) => {
   if (data.loading) {
     return (<div>Loading</div>)
@@ -19,6 +21,9 @@ const ArticlesListPage = ({ data }) => {
       <div>
         there are {data.articles.length} articles.
       </div>
+      {data.articles.map(article =>
+        <ArticlePreview key={article.id} article={article} />)
+      }
     </div>
   )
 }

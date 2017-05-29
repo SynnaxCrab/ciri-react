@@ -6,6 +6,7 @@ import { ApolloProvider } from 'react-apollo'
 
 import ArticlesListPage from './ArticlesListPage'
 import NewArticlePage from './NewArticlePage'
+import ArticlePage from './ArticlePage'
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({ uri: 'http://127.0.0.1:3000/graphql' }),
@@ -28,6 +29,7 @@ const App = () => (
       <div>
         <Route exact path='/' component={ArticlesListPage} />
         <Route path='/articles/new' component={NewArticlePage} />
+        <Route path='/articles/:id' component={ArticlePage} />
       </div>
     </Router>
   </ApolloProvider>
