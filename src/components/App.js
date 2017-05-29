@@ -1,5 +1,8 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import createHistory from 'history/createBrowserHistory'
+import { Switch, Route } from 'react-router-dom'
+import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
@@ -8,30 +11,35 @@ import ArticlesListPage from './ArticlesListPage'
 import NewArticlePage from './NewArticlePage'
 import ArticlePage from './ArticlePage'
 
-const client = new ApolloClient({
+const history = createHistory()
+
+const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({ uri: 'http://127.0.0.1:3000/graphql' }),
   dataIdFromObject: o => o.id,
 })
 
 const store = createStore(
   combineReducers({
-    apollo: client.reducer(),
+    router: routerReducer,
+    apollo: apolloClient.reducer(),
   }),
   {},
   compose(
-    applyMiddleware(client.middleware()),
+    applyMiddleware(apolloClient.middleware(), routerMiddleware()),
   ),
 )
 
 const App = () => (
-  <ApolloProvider store={store} client={client}>
-    <Router>
+  <ApolloProvider store={store} client={apolloClient}>
+    <ConnectedRouter history={history}>
       <div>
         <Route exact path='/' component={ArticlesListPage} />
-        <Route path='/articles/new' component={NewArticlePage} />
-        <Route path='/articles/:id' component={ArticlePage} />
+        <Switch>
+          <Route path='/articles/new' component={NewArticlePage} />
+          <Route path='/articles/:id' component={ArticlePage} />
+        </Switch>
       </div>
-    </Router>
+    </ConnectedRouter>
   </ApolloProvider>
 )
 

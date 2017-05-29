@@ -16,12 +16,14 @@
     "apollo-client": "^1.2.2",
     "draft-js": "^0.10.0",
     "graphql-tag": "^2.1.0",
+    "history": "^4.6.1",
     "koa": "^2.2.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-apollo": "^1.2.0",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
+    "react-router-redux": "next",
     "redux": "^3.6.0"
   },
   "devDependencies": {
