@@ -18,6 +18,7 @@ const apolloClient = new ApolloClient({
   dataIdFromObject: o => o.id,
 })
 
+/* eslint-disable no-underscore-dangle */
 const store = createStore(
   combineReducers({
     router: routerReducer,
@@ -26,8 +27,10 @@ const store = createStore(
   {},
   compose(
     applyMiddleware(apolloClient.middleware(), routerMiddleware()),
+    (typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined') ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f,
   ),
 )
+/* eslint-disable no-underscore-dangle */
 
 const App = () => (
   <ApolloProvider store={store} client={apolloClient}>
