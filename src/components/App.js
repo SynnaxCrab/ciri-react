@@ -2,7 +2,7 @@ import React from 'react'
 
 import createHistory from 'history/createBrowserHistory'
 import { Switch, Route } from 'react-router-dom'
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
