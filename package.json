@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "apollo-client": "^1.9.0-1",
+    "babel-polyfill": "^6.23.0",
     "draft-js": "^0.10.0",
     "graphql-tag": "^2.4.1",
     "history": "^4.6.1",
