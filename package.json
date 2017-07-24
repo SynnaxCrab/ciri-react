@@ -9,7 +9,7 @@
   "scripts": {
     "build": "babel src --out-dir dist --copy-files && webpack --env=prod --progress --profile",
     "dev": "webpack-dev-server --env=dev",
-    "start": "node dist/server/app.js"
+    "start": "node server/app.js"
   },
   "author": "",
   "license": "ISC",
