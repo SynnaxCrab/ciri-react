@@ -1,10 +1,15 @@
 import Koa from 'koa'
+import path from 'path'
+import mount from 'koa-mount'
+import serve from 'koa-static'
 
 const app = new Koa()
+const assets = new Koa()
 
-app.use(async ctx => {
-  ctx.body = "Hello Koa React!"
-})
+assets.use(serve(path.resolve(__dirname, '..', 'assets')))
+
+app.use(serve(path.resolve(__dirname, '..', 'html')))
+app.use(mount('/assets', assets))
 
 const port = 8888
 console.log("Started on port: " + port)

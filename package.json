@@ -7,7 +7,7 @@
     "node": "7.10.0"
   },
   "scripts": {
-    "build": "webpack --env=prod --progress --profile",
+    "build": "babel src --out-dir dist --copy-files && webpack --env=prod --progress --profile",
     "dev": "webpack-dev-server --env=dev",
     "start": "node dist/server/app.js"
   },
@@ -19,6 +19,7 @@
     "graphql-tag": "^2.4.1",
     "history": "^4.6.1",
     "koa": "^2.2.0",
+    "koa-mount": "^3.0.0",
     "koa-static": "^4.0.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
