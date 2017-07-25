@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const { resolve } = require('path')
 const webpack = require('webpack')
 
@@ -60,6 +62,12 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+        API_END_POINT: JSON.stringify(process.env.API_END_POINT)
+      }
+    }),
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
 

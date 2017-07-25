@@ -1,6 +1,5 @@
 import 'babel-polyfill'
 import React from 'react'
-
 import createHistory from 'history/createBrowserHistory'
 import { Switch, Route } from 'react-router-dom'
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
@@ -15,7 +14,7 @@ import ArticlePage from './ArticlePage'
 const history = createHistory()
 
 const apolloClient = new ApolloClient({
-  networkInterface: createNetworkInterface({ uri: 'http://127.0.0.1:3000/graphql' }),
+  networkInterface: createNetworkInterface({ uri: process.env.API_END_POINT }),
   dataIdFromObject: o => o.id,
 })
 
