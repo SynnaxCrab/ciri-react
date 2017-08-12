@@ -9,6 +9,7 @@ pipelines:
         script:
           - apk update
           - apk add openssh
+          - apk add git
           - yarn install
           - yarn build
           - export IMAGE_NAME=winfield/ciri-react:latest
