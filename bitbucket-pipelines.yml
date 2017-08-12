@@ -1,0 +1,18 @@
+image: node:alpine
+
+options:
+  docker: true
+
+pipelines:
+  default:
+    - step:
+        script:
+          - apk update
+          - apk add openssh
+          - yarn install
+          - yarn build
+          - export IMAGE_NAME=winfield/ciri-react:latest
+          - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
+          - docker build -t $IMAGE_NAME .
+          - docker push $IMAGE_NAME
+          - ssh $HOST -l $SERVER_USER 'docker service update --image winfield/ciri-react:latest ciri_react'
