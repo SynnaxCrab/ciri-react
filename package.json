@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "Ciri React",
   "main": "index.js",
-  "engines": {
-    "node": "7.10.0"
-  },
   "scripts": {
     "build": "babel src --out-dir dist --copy-files && webpack --env=prod --progress --profile",
     "dev": "webpack-dev-server --env=dev",
