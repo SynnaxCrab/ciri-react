@@ -1,5 +1,7 @@
 # Ciri Frontend React App #
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/winfield/ciri-react.svg)](https://greenkeeper.io/)
+
 The Ciri React App
 
 ## Development ##
