@@ -1,5 +1,7 @@
 # Ciri Frontend React App #
 
+
+[![Build Status](https://travis-ci.org/winfield/ciri-react.svg?branch=master)](https://travis-ci.org/winfield/ciri-react)
 [![Greenkeeper badge](https://badges.greenkeeper.io/winfield/ciri-react.svg)](https://greenkeeper.io/)
 
 The Ciri React App
