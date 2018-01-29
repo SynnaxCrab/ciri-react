@@ -14,7 +14,7 @@
   "dependencies": {
     "apollo-client": "^2.2.0",
     "babel-polyfill": "^6.23.0",
-    "dotenv": "^4.0.0",
+    "dotenv": "^5.0.0",
     "draft-js": "^0.10.0",
     "graphql-tag": "^2.4.1",
     "history": "^4.6.1",
