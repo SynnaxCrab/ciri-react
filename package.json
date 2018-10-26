@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-client": "^2.2.0",
+    "apollo-client": "^2.4.4",
     "babel-polyfill": "^6.23.0",
     "dotenv": "^5.0.0",
     "draft-js": "^0.10.0",
