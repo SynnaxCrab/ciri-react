@@ -22,7 +22,7 @@
     "koa-mount": "^3.0.0",
     "koa-static": "^4.0.1",
     "prop-types": "^15.5.10",
-    "react": "^16.2.0",
+    "react": "^16.6.3",
     "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.1.1",
