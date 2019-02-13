@@ -21,7 +21,7 @@
     "koa": "^2.2.0",
     "koa-mount": "^3.0.0",
     "koa-static": "^4.0.1",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.7.2",
     "react": "^16.2.0",
     "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",
