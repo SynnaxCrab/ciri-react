@@ -46,7 +46,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.0.1",
     "jest": "^22.0.5",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.19.0",
     "react-hot-loader": "next",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0",
